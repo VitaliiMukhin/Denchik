@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <style>
+        #frameContainer {
+            display: none;
+            position: absolute;
+            z-index: 3;
+            left: 460px;
+            top: 20px;
+            
+        }
+    </style>
+  <script>
+    function moveButton() {
+      const button = document.querySelector('.moveable-button');
+      const maxX = window.innerWidth - button.clientWidth;
+      const maxY = window.innerHeight - button.clientHeight;
+
+      const randomX = Math.floor(Math.random() * maxX);
+      const randomY = Math.floor(Math.random() * maxY);
+
+      button.style.left = randomX + 'px';
+      button.style.top = randomY + 'px';
+    }
+     function openPage() {
+        var frameContainer = document.getElementById('frameContainer');
+        frameContainer.style.display = 'block';
+    }
+  </script>
+  <title>Перемещаемая кнопка</title>
+</head>
+<body>
+  <button class="moveable-button button-pink" onclick="moveButton()">Нет</button>
+  <button class="button-da button-pink" onclick="openPage()">Да</button>
+  <center>
+    <div id="frameContainer">
+    <img class = "picture1"  src="Den2.png"></img>
+</div>
+    <h1 class = "h1">Денчик хуесос?</h1>
+    <img class = "picture" src = "Den1.png">
+  </center>
+</body>
+</html>
